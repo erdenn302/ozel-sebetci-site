@@ -1,21 +1,11 @@
-<html>
-    <head>
-        <title>Özel Sebetci</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Özel Sebetci</a></h1>
-        </div>
-        <div>
-            <p>published: 28.02.2020, 23:54</p>
-            <h2><a href="">Blog Sitesi</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis molestias illum eveniet cupiditate corporis, repellat sint esse odio praesentium commodi dolores fugit sunt temporibus dolore omnis illo earum porro fuga?. </p>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 28.02.2020, 23:54</p>
-            <h2><a href="">LOREM YAZISI</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur labore veritatis unde? Accusamus veritatis recusandae nisi laboriosam sapiente id quis laborum doloremque. Dolores aspernatur dolore ad ipsam esse quam explicabo.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
